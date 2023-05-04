@@ -1,0 +1,51 @@
+.home-body {
+    margin-top: 10rem;
+  }
+  
+  .card {
+    background: black;
+    color: white;
+    border-radius: 17px;
+    height: 12rem;
+    width: 12rem;
+  
+    box-shadow: 5px 5px 14px #9b9b9b,
+      -5px -5px 14px #ffffff;
+  }
+  
+  .card h1 {
+    transition: display 0.1s ease;
+  }
+  
+  .card:hover {
+    background: #e0e0e0;
+    color: black;
+  }
+  
+  .card:hover h1 {
+    display: none;
+  }
+  
+  .count {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .col-md-6 {
+      display: flex;
+      justify-content: center;
+  
+    }
+  }
+  
+  .micon {
+    font-size: 6em;
+  }

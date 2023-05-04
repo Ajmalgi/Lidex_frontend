@@ -1,0 +1,23 @@
+input{
+    width:50%;
+}
+
+.deleteModal{
+    position: fixed;
+    z-index: 1000;
+    height: 6rem;
+    width: 30%;
+   background-color:rgb(228 239 255 / 46%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+  
+  .deleteModal button {
+    margin-left: auto;
+   
+  }
+  

@@ -1,0 +1,31 @@
+.caroimg{
+    height: 45rem;
+}
+.carousel{
+    margin-top: -76px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    text-align: center;
+    left: -39%;;
+    
+    
+  }
+
+  .carousel-caption h5 {
+    margin-left: -10%;
+    
+   
+  }
+  .carousel-caption h1 {
+    font-size: 68px;
+    margin-left: 16%;
+   
+  }
+  .carousel-caption h2 {
+    font-size: 68px;
+    
+  }

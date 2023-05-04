@@ -1,0 +1,35 @@
+
+<table  class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Leave From Date</th>
+        <th scope="col">Leave To Date</th>
+        <th scope="col">Leave Type</th>
+        <th scope="col">reasonForLeave</th>
+        <th scope="col">status</th>
+        <th scope="col">update status</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leave of pending_leave;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{leave.firstName}}</td>
+        <td>{{leave.lastName}}</td>
+        <td>{{leave.leaveFromDate}}</td>
+        <td>{{leave.leaveToDate}}</td>
+        <td>{{leave.leaveType}}</td>
+        <td>{{leave.reasonForLeave}}</td>
+       
+        <td><p [ngStyle]="{'color': leave.status === 'approved' ? 'green' : (leave.status === 'rejected' ? 'red' : 'blue')}"><strong>{{leave.status}}</strong></p>   </td>
+        <td><div class="d-flex \"> <button class="btn rounded-0 btn-success approve" (click)="submit('approved',leave._id)">approve</button>
+            <button class="btn ms-2 rounded-0 btn-danger approve" (click)="submit('rejected',leave._id)">reject</button></div></td>
+       
+      </tr>
+     
+    </tbody>
+  </table>

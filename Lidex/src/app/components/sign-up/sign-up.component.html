@@ -1,0 +1,158 @@
+<app-navbar></app-navbar>
+
+<div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                    <form  [formGroup]="sign_up" (ngSubmit)="submit()" >
+
+                        <div class="row">
+                            <div class="col-12 mb-5">
+
+                                <select  formControlName="employ_type" class="select form-control-lg">
+                                    <option value="" disabled selected>Choose type</option>
+                                    <option value="admin">admin</option>
+                                    <option value="user">user</option>
+
+                                </select>
+                                <div *ngIf="sign_up.get('employ_type')?.invalid && (sign_up.get('firstname')?.dirty || sign_up.get('firstname')?.touched)">
+                                    <p class="text-danger" *ngIf="sign_up.get('employ_type')?.hasError('required')">
+                                        employ type required
+                                    </p> 
+                                </div>
+                                <!-- <label class="form-label select-label">Choose type</label> -->
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+
+                                <div class="form-outline">
+                                    <input formControlName="firstname" type="text" id="firstname" class="form-control form-control-lg" />
+                                    <label class="form-label" for="firstname">First Name</label>
+                                </div>
+                                <div *ngIf="sign_up.get('firstname')?.invalid&&(sign_up.get('firstname')?.dirty||sign_up.get('firstname')?.touched)">
+                                    <span class="text-danger" *ngIf="sign_up.get('firstname')?.hasError('required')">
+                                     firstname required</span>
+                                </div>
+                          
+
+                            </div>
+                            <div class="col-md-6 mb-4">
+
+                                <div class="form-outline">
+                                    <input formControlName="lastname" type="text" id="lastname" class="form-control form-control-lg" />
+                                    <label class="form-label" for="lastname">Last Name</label>
+                                </div>
+                                <div *ngIf="sign_up.get('lastname')?.invalid && (sign_up.get('lastname')?.dirty || sign_up.get('lastname')?.touched)">
+                                    <span class="text-danger" *ngIf="sign_up.get('lastname')?.hasError('required')">
+                                        Last Name is required
+                                    </span>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                <div class="form-outline datepicker w-100">
+                                    <input formControlName="age" type="number" class="form-control form-control-lg" id="age" />
+                                    <label for="birthdayDate" class="form-label">Age</label>
+                                    <div *ngIf="sign_up.get('age')?.invalid && (sign_up.get('age')?.dirty || sign_up.get('age')?.touched)">
+                                        <p class="text-danger" *ngIf="sign_up.get('age')?.hasError('required')">
+                                            age required
+                                        </p> 
+                                    </div>
+                                </div>
+
+                               
+
+                            </div>
+                            <div class="col-md-6 mb-4">
+
+                                <h6 class="mb-2 pb-1">Gender: </h6>
+
+                                <div class="form-check form-check-inline">
+                                    <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                                        id="femaleGender" value="female" checked />
+                                    <label class="form-check-label" for="femaleGender">Female</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                                        id="maleGender" value="male" />
+                                    <label class="form-check-label" for="maleGender">Male</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                                        id="otherGender" value="other" />
+                                    <label class="form-check-label" for="otherGender">Other</label>
+                                </div>
+
+                                <div *ngIf="sign_up.get('gender')?.invalid && (sign_up.get('email')?.dirty || sign_up.get('age')?.touched)">
+                                    <p class="text-danger" *ngIf="sign_up.get('gender')?.hasError('required')">
+                                        gender required
+                                    </p> 
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4 pb-2">
+
+                                <div class="form-outline">
+                                    <input  formControlName="email" type="email" id="emailAddress" class="form-control form-control-lg" />
+                                    <label class="form-label" for="emailAddress">Email</label>
+                                </div>
+                                <div class="text-danger" >{{email_msg}}</div>
+                                <div *ngIf="sign_up.get('email')?.invalid && (sign_up.get('email')?.dirty || sign_up.get('email')?.touched)">
+                                    <p class="text-danger" *ngIf="sign_up.get('email')?.hasError('required')">
+                                      Email is required
+                                    </p>
+                                    
+                                    <p class="text-danger" *ngIf="sign_up.get('email')?.hasError('emailExists')">
+                                      Email already exists
+                                    </p>
+                                  </div>
+                                  
+
+                            </div>
+                            <div class="col-md-6 mb-4 pb-2">
+
+                                <div class="form-outline">
+                                    <input formControlName="phone" type="tel" id="phoneNumber" class="form-control form-control-lg" />
+                                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                                </div>
+                                <div *ngIf="sign_up.get('phone')?.invalid && (sign_up.get('phone')?.dirty || sign_up.get('phone')?.touched)">
+                                    <p class="text-danger" *ngIf="sign_up.get('phone')?.hasError('required')">
+                                        phone required
+                                    </p> 
+                                    <p class="text-danger" *ngIf="sign_up.get('phone')?.hasError('pattern')">
+                                        must have 10 digit
+                                    </p> 
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-2">
+                            <input [disabled]="sign_up.invalid " class="btn btn-dark btn-lg" type="submit" value="Submit" />
+                            <p [ngStyle]="{'color': status === 200 ? 'green' : 'red'}">{{msg}}</p>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

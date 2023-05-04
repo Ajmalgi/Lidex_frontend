@@ -1,0 +1,33 @@
+.alert{
+    background-color:rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.alert-link{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-btn{
+    border: 2px solid black;
+    
+  z-index: 999;
+  
+}
+#nav_top{
+    height:40px;
+    background-color: black;
+}
+
+.full-nav{
+    position: sticky;
+    width: 100%; 
+    /* z-index:1;  */
+    top:0;
+    position: sticky;
+    z-index: 1000;
+}
+.navbar{
+    background-color:rgba(0,0,0,.15)!important;
+}
+  
+  

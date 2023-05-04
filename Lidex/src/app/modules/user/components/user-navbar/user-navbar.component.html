@@ -1,0 +1,43 @@
+<div class="full-nav">
+    <div class="row" id="nav_top">
+        <div class="col-md-10 col-sm-8 "></div>
+        <div class="col-md-2 col-sm-4  text-white align-items-center align-items-center">
+            <div class="icons mt-2">
+                <i class="bi bi-youtube"></i>&nbsp;&nbsp;&nbsp;
+                <i class="bi bi-whatsapp"></i>&nbsp;&nbsp;&nbsp;
+                <i class="bi bi-instagram"></i>&nbsp;&nbsp;&nbsp;
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg  ">
+        <div class="container-fluid">
+            <a  [routerLink]="'user_home'" class="navbar-brand  text-light "><img id="handshake" src="assets/public/handshake (1).png" alt="">
+                <strong>Lidex</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light  active" aria-current="page" [routerLink]="'user_home'">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-light" [routerLink]="'leave_form'"><strong>Leave apply</strong> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-light" [routerLink]="'view_leave'"><strong>Leave(view,edit,delete)</strong> </a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+
+                    <button class="btn nav-btn bg-dark"  type="button"><strong class="text-light">Logout</strong></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+   
+</div>

@@ -1,0 +1,148 @@
+<section class="h-100 h-custom" style="background-color: #888888;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <div class="divimage"> <img src="/assets/public/ill.jpg"
+                class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                alt="Sample photo"></div>
+           
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+  
+              <form [formGroup]="leaveForm" (ngSubmit)="submit()" class="px-md-2">
+                <div class="row">
+                    <div class="col-6">
+                <div class="form-outline mb-4">
+                  <input formControlName="firstName" type="text" id="firstname" class="form-control" />
+                  <label  class="form-label" for="firstname">firstname</label>
+                  <div *ngIf="leaveForm.get('firstName')?.invalid && (leaveForm.get('firstName')?.dirty || leaveForm.get('firstName')?.touched)">
+                    <span class="text-danger" *ngIf="leaveForm.get('firstName')?.hasError('required')">
+                        firstName required
+                    </span> 
+                </div>
+                </div>
+               </div>
+                    <div class="col-6">
+                <div class="form-outline mb-4">
+                  <input formControlName="lastName" type="text" id="lastname" class="form-control" />
+                  <label  class="form-label" for="lastname">lastname</label>
+                  <div *ngIf="leaveForm.get('lastName')?.invalid && (leaveForm.get('lastName')?.dirty || leaveForm.get('lastName')?.touched)">
+                    <span class="text-danger" *ngIf="leaveForm.get('lastName')?.hasError('required')">
+                        firstName required
+                    </span> 
+                </div>
+                  
+                </div>
+               </div>
+               </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline datepicker">
+                      <input formControlName="leaveFromDate" type="date" class="form-control" id="leavefordate" />
+                      <label for="leavefordate" class="form-label">leave from date</label>
+                      <div *ngIf="leaveForm.get('leaveFromDate')?.invalid && (leaveForm.get('leaveFromDate')?.dirty || leaveForm.get('leaveFromDate')?.touched)">
+                        <span class="text-danger" *ngIf="leaveForm.get('leaveFromDate')?.hasError('required')">
+                            leave from date required
+                        </span> 
+                    </div>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div  class="form-outline datepicker">
+                        <input formControlName="leaveToDate" type="date" class="form-control" id="leavetodate" />
+                        <label for="leavetodate" class="form-label">leave to date</label>
+                        <div *ngIf="leaveForm.get('leaveToDate')?.invalid && (leaveForm.get('reasonForLeave')?.dirty || leaveForm.get('leaveToDate')?.touched)">
+                            <span class="text-danger" *ngIf="leaveForm.get('leaveToDate')?.hasError('required')">
+                                leave to date required
+                            </span> 
+                        </div>
+                      </div>
+  
+                   
+  
+                  </div>
+                </div>
+
+  
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                        <textarea formControlName="reasonForLeave" id="reasonforleave" class="form-control">
+                           
+                        </textarea>
+                        <label class="form-label" for="reasonforleave">Reason for leave</label>
+                        <div *ngIf="leaveForm.get('reasonForLeave')?.invalid && (leaveForm.get('reasonForLeave')?.dirty || leaveForm.get('reasonForLeave')?.touched)">
+                            <span class="text-danger" *ngIf="leaveForm.get('reasonForLeave')?.hasError('required')">
+                                reason for leave
+                            </span> 
+                        </div>
+                    
+                     
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 ">
+
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+
+                    <div class="form-check form-check-inline">
+                        <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                            id="femaleGender" value="female"  />
+                        <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                            id="maleGender" value="male" />
+                        <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                            id="otherGender" value="other" />
+                        <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+
+                    <div *ngIf="leaveForm.get('gender')?.invalid && (leaveForm.get('reasonForLeave')?.dirty || leaveForm.get('reasonforleave')?.touched)">
+                        <p class="text-danger" *ngIf="leaveForm.get('gender')?.hasError('required')">
+                            gender required
+                        </p> 
+                    </div>
+                    
+
+                </div>
+                </div>
+                <div class="row mb-4  pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+                    <div class="form-outline mb-4">
+                <select formControlName="leaveType"   type="text"  class="form-select "  aria-label="Default select example">
+                  <option selected value="" disabled >choose course</option>
+                  <option value="work from home" >work from home</option>
+                  <option value="casual leave" >casual leave</option>
+                  <option value="sick leave" >sick leave</option>
+                </select>
+                <label class="form-check-label" for="otherGender">leave type</label>
+            <div *ngIf="leaveForm.get('leaveType')?.invalid&&(leaveForm.get('leaveType')?.touched || leaveForm.get('leaveType')?.dirty)" class="text-danger">
+              <p *ngIf="leaveForm.get('leaveType')?.hasError('required')">leave type required</p>
+            </div>
+              </div>
+              </div>
+            </div>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+                <p [ngStyle]="{'color': status == 200 ? 'green' : 'red'}">{{msg}}</p>
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
