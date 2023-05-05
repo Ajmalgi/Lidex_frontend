@@ -1,71 +1,79 @@
 <div *ngIf="show_modal" class="row ">
-    <div class="col-4"></div>
-    <div class="col-4"><div class="deleteModal"><h4>are your sure ?</h4>
-        <hr>
-        <div class="d-flex justify-content-center ">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div class="deleteModal">
+      <h4>are your sure ?</h4>
+      <hr>
+      <div class="d-flex justify-content-center ">
         <button (click)="delete_leave()" class="btn btn-danger">conform detletion</button>
         <button (click)="modalcancel()" class="btn btn-primary">cancle</button>
-    </div></div></div>
-    <div class="col-4"></div>
+      </div>
+    </div>
   </div>
+  <div class="col-4"></div>
+</div>
 <section style="background-color: #eee;">
-    <div class="container py-5">
-      <form *ngIf="leave_data; else noData" [formGroup]="leave_edit"  class="py-4" method="POST">
+  <div class="container py-5">
+    <form *ngIf="leave_data; else noData" [formGroup]="leave_edit" class="py-4" method="POST">
       <div class="row">
         <div class="col">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-            
-             
-            <h3 class="breadcrumb-item active" aria-current="page">Status: 
-                <span [ngStyle]="{'color': leave_data.status === 'approved' ? 'green' : (leave_data.status === 'rejected' ? 'red' : 'blue')}">
-                  {{leave_data.status}}  
-                </span>      
-              </h3>
-              <p>you cant   edit approved request</p>
-              
-              
-         
+
+
+            <h3 class="breadcrumb-item active" aria-current="page">Status:
+              <span
+                [ngStyle]="{'color': leave_data.status === 'approved' ? 'green' : (leave_data.status === 'rejected' ? 'red' : 'blue')}">
+                {{leave_data.status}}
+              </span>
+            </h3>
+            <p>you cant edit approved request</p>
+
+
+
           </nav>
         </div>
       </div>
-  
+
       <div class="row">
-       
-        
+
+
         <div class="col-lg-12">
           <div class="card mb-4">
-           
+
             <div class="card-body">
-        
+
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                    <input  class="border-0 text-center"  type="text" formControlName="firstName"  value="{{leave_data.firstName}}"> 
+                  <input class="border-0 text-center" type="text" formControlName="firstName"
+                    value="{{leave_data.firstName}}">
                 </div>
               </div>
-             
-             
+
+
               <hr>
-              
+
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Last Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <input class="border-0 text-center"  formControlName="lastName" type="text"  value="{{leave_data.lastName}}">
+                  <input class="border-0 text-center" formControlName="lastName" type="text"
+                    value="{{leave_data.lastName}}">
                 </div>
               </div>
-              
-            
+
+
               <hr>
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Leave From Date</p>
                 </div>
                 <div class="col-sm-9">
-                  <input type="date" class="border-0 text-center"   formControlName="leaveFromDate"  value="{{leave_data.leaveFromDate}}">
+                  <input type="date" class="border-0 text-center" formControlName="leaveFromDate"
+                    value="{{leave_data.leaveFromDate}}">
                 </div>
               </div>
               <hr>
@@ -74,7 +82,8 @@
                   <p class="mb-0">Leave To Date</p>
                 </div>
                 <div class="col-sm-9">
-                  <input type="date" class="border-0 text-center"   formControlName="leaveToDate"  value="{{leave_data.leaveToDate}}">
+                  <input type="date" class="border-0 text-center" formControlName="leaveToDate"
+                    value="{{leave_data.leaveToDate}}">
                 </div>
               </div>
               <hr>
@@ -83,7 +92,8 @@
                   <p class="mb-0">Reason For Leave</p>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" class="border-0 text-center"   formControlName="reasonForLeave" value="{{leave_data.reasonForLeave}}">
+                  <input type="text" class="border-0 text-center" formControlName="reasonForLeave"
+                    value="{{leave_data.reasonForLeave}}">
                 </div>
               </div>
               <hr>
@@ -92,45 +102,45 @@
                   <p class="mb-0">Leave Type</p>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" class="border-0 text-center"  formControlName="leaveType"  value="{{leave_data.leaveType}}">
+                  <input type="text" class="border-0 text-center" formControlName="leaveType"
+                    value="{{leave_data.leaveType}}">
                 </div>
               </div>
-            
-            
+
+
             </div>
-            
-           
-         
+
+
+
           </div>
-          
+
         </div>
-        
-        </div>
-        <div class="d-flex justify-content-center mb-5">
-          
-            <button id="btnedit" class="btn btn-primary" [disabled]=" leave_data.status == 'approved'" (click)="btnedit()">Edit</button>
 
-            <button type="submit" [disabled]="subbtn"  (click)="submit()" class="btn bg-dark text-light"> Submit</button>        
-            <button  (click)="modal()" class="btn btn-danger"> Delete</button>
-            
-          </div>
-          
-          
-          
-
-          
-      
-          <span [ngStyle]="{'color': statuscode==200 ? 'green' : 'red'}">{{msg}}</span>
-
-        </form>
-
-        <ng-template  #noData>
-            <div class="text-center mt-5 text-danger">
-            <h1>No leave data exists.</h1>
-        </div>
-          </ng-template>
       </div>
-      
-  </section>
+      <div class="d-flex justify-content-center mb-5">
 
-  
+        <button id="btnedit" class="btn btn-primary" [disabled]=" leave_data.status == 'approved'"
+          (click)="btnedit()">Edit</button>
+
+        <button type="submit" [disabled]="subbtn" (click)="submit()" class="btn bg-dark text-light"> Submit</button>
+        <button (click)="modal()" class="btn btn-danger"> Delete</button>
+
+      </div>
+
+
+
+
+
+
+      <span [ngStyle]="{'color': statuscode==200 ? 'green' : 'red'}">{{msg}}</span>
+
+    </form>
+
+    <ng-template #noData>
+      <div class="text-center mt-5 text-danger">
+        <h1>No leave data exists.</h1>
+      </div>
+    </ng-template>
+  </div>
+
+</section>
