@@ -9,7 +9,7 @@
         person
         </span>
       <h1 class="card-title"><br> Total <br> Users</h1>
-      <h2 class="count">{{details.total_users}}</h2>
+      <h2 class="count">{{details?.total_users}}</h2>
      
     
     </div>
@@ -23,7 +23,7 @@
                 </span>
            
           <h1 class="card-title"> <br> Pending <br> Leaves</h1>
-          <h2 class="count">{{details.pending_leave}}</h2>
+          <h2 class="count">{{details?.pending_leave}}</h2>
          
 
         </div>
@@ -36,7 +36,7 @@
                 layers
                 </span>
             <h1 class="card-title"> <br> Approved <br> Leaves</h1>
-            <h2 class="count">{{details.approved_leave}}</h2>
+            <h2 class="count">{{details?.approved_leave}}</h2>
             </div>
           </div>
         </div>
@@ -50,13 +50,13 @@
                     layers
                     </span>
                 <h1 class="card-title"><br> Rejected <br> requests</h1>
-                <h2 class="count">{{details.rejected_leave}}</h2>
+                <h2 class="count">{{details?.rejected_leave}}</h2>
              
                 </div>
               </div>
             </div>
             <div class="col-lg-4  col-md-6 col-12 mt-4">
-                <div class="card" style="width: 100%;">
+                <div class="card " style="width: 100%; ">
                     <div class="card-body">
                       <h5 class="card-title">Special title treatment</h5>
                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

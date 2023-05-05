@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ComService } from 'src/app/common-services/com.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ComService } from 'src/app/common-services/com.service';
   ]
 })
 export class AdminLoginComponent {
-  constructor(private service:ComService ){}
+  constructor(private service:ComService,private router:Router ){}
   logsubmit(formdata : any){
     console.log(formdata)
 
@@ -16,8 +17,11 @@ export class AdminLoginComponent {
     {console.log(res.statuscode)
 
       if (res.statuscode == 200){
+        console.log(res.admin_id)
         localStorage.setItem('admin_token',res.admin_id)
         localStorage.setItem('admin_name',res.name)
+        this.router.navigate(['admin/admin-dashboard'])
+
       
       }
     })

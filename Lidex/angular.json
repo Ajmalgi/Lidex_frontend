@@ -26,7 +26,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "C:/Users/ajmal/OneDrive/Desktop/Lidex machine test/Lidex/Lidex/node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },

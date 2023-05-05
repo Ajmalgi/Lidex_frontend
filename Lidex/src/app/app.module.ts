@@ -13,6 +13,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PagnotfoundComponent } from './components/pagnotfound/pagnotfound.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReusableLoginComponent,
     UserLoginComponent,
     AdminLoginComponent,
+    PagnotfoundComponent,
+  
+ 
    
   ],
   imports: [

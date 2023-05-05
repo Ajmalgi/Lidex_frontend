@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-navbar',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-navbar.component.css']
 })
 export class UserNavbarComponent {
+  constructor(private router:Router){}
+
+  
+    logout() {
+      
+      localStorage.removeItem('user_token')
+      this.router.navigate([''])
+    
+    }
+    
+
 
 }

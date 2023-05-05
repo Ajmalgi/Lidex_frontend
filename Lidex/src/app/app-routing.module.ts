@@ -4,6 +4,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { PagnotfoundComponent } from './components/pagnotfound/pagnotfound.component';
 
 const routes: Routes = [
   {path: '',redirectTo:'home',pathMatch:'full'},
@@ -11,8 +12,10 @@ const routes: Routes = [
   {path: 'admin-login',component:AdminLoginComponent},
   {path: 'user-login',component:UserLoginComponent},
   {path: 'sign-up',component:SignUpComponent},
+  
   { path: 'user', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) },
   { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
+  { path: '**', component: PagnotfoundComponent }
 ];
 
 @NgModule({
